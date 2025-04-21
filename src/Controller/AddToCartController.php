@@ -19,7 +19,7 @@ readonly class AddToCartController
     ) {
     }
 
-    public function get(RequestInterface $request): ResponseInterface
+    public function add(RequestInterface $request): ResponseInterface
     {
         $rawRequest = json_decode($request->getBody()->getContents(), true);
         $product = $this->productRepository->getByUuid($rawRequest['productUuid']);
